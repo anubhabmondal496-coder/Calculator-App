@@ -1,8 +1,6 @@
 ## System Architecture
 
-The following diagram illustrates the architecture and execution flow of the Flutter Calculator application across the Flutter application layer and desktop host platforms.
-
-![Calculator Application Architecture](docs/Calculator_diagram.png)
+The following diagram illustrates the architecture and execution flow of the Flutter Calculator application across the Flutter application layer and desktop host platforms
 
 ### Architecture Overview
 <h2>System Architecture</h2>
