@@ -1,89 +1,56 @@
-🧮 Flutter Calculator App
+## System Architecture
 
-A simple and responsive calculator application built with Flutter and Dart. The app supports basic arithmetic operations, decimal calculations, deletion, clearing input, and division-by-zero handling.
+The following diagram illustrates the architecture and execution flow of the Flutter Calculator application across the Flutter application layer and desktop host platforms.
 
-✨ Features
-➕ Addition
-➖ Subtraction
-✖️ Multiplication
-➗ Division
-🔢 Decimal number calculations
-⌫ Delete the last entered character
-🧹 AC (All Clear)
-⚠️ Division-by-zero protection
-📱 Android APK support
-🎨 Clean and responsive Flutter UI
-🛠️ Tech Stack
-Flutter
-Dart
-Android
-Material UI
-📂 Project Structure
+![Calculator Application Architecture](docs/Calculator_diagram.png)
+
+### Architecture Overview
+<h2>System Architecture</h2>
+
+<p align="center">
+  <img src="docs/Calculator_diagram.png" alt="Calculator Application Architecture" width="900">
+</p>
+
+The application consists of three main layers:
+
+1. **Calculator Application**
+   - `main.dart` acts as the Flutter application entry point.
+   - The Calculator Screen provides the user interface.
+   - Calculator operations process the user's input and return the calculated result.
+
+2. **Flutter Platform Host**
+   - Flutter provides platform-specific window hosts for desktop environments.
+   - On Windows, the Flutter application interacts with the native Windows window implementation.
+   - On Linux, the application runs through the GTK Flutter host.
+
+3. **User Interaction**
+   - The calculator user enters numbers and mathematical operators through the calculator interface.
+   - The calculator screen sends the input to the calculation logic.
+   - The calculated result is returned and displayed on the calculator screen.
+
+### Application Flow
+
+```text
+User Input
+    ↓
+Calculator Screen
+    ↓
+Calculator Operations
+    ↓
+Calculation Result
+    ↓
+Calculator Screen
+
 calculator/
-│
-├── lib/
-│   └── main.dart
-│
 ├── android/
 ├── ios/
+├── lib/
+├── test/
 ├── web/
 ├── windows/
-├── test/
-│
-├── pubspec.yaml
-├── analysis_options.yaml
+├── docs/
+│   └── Calculator_diagram.png
 ├── .gitignore
+├── pubspec.yaml
 └── README.md
-⚙️ Getting Started
-1. Clone the repository
-git clone <your-repository-url>
-cd calculator
-2. Install dependencies
-flutter pub get
-3. Run the application
-flutter run
 
-Make sure an Android device or emulator is connected.
-
-📦 Build APK
-
-To create a release APK:
-
-flutter build apk --release
-
-The generated APK will be available at:
-
-build/app/outputs/flutter-apk/app-release.apk
-🧮 Supported Operations
-Operation	Example	Result
-Addition	12 + 5	17
-Subtraction	12 - 5	7
-Multiplication	12 × 5	60
-Division	12 ÷ 5	2.4
-Decimal	12.5 + 3.2	15.7
-Division by Zero
-
-The calculator prevents invalid division:
-
-10 / 0
-
-Output:
-
-Division by zero not allowed
-🔮 Future Improvements
-Scientific calculator functions
-Calculation history
-Parentheses and operator precedence
-Percentage calculations
-Dark/light themes
-Improved UI animations
-Landscape mode
-Unit conversion
-👨‍💻 Author
-
-Anubhab Mondal
-
-Computer Science & Engineering Student
-Kalyani Government Engineering College
-
-⭐ If you found this project useful, consider giving the repository a star!
